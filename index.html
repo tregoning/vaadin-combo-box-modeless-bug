@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Napkin</title>
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <style>
+        a,
+        a:active,
+        a:visited {
+            font-size: 2em;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<vaadin-combo-box modeless></vaadin-combo-box>
+
+<a href="#">Hover link should work</a>
+<script type="module">
+  import '@vaadin/vaadin-combo-box/vaadin-combo-box.js';
+
+  customElements.whenDefined('vaadin-combo-box').then(function() {
+    const departments = [
+      {id: '1', name: 'Product'},
+      {id: '2', name: 'Service'},
+      {id: '3', name: 'HR'},
+      {id: '4', name: 'Accounting'}
+    ];
+    const comboBox = document.querySelectorAll('vaadin-combo-box');
+    comboBox.forEach(function(combo) {
+      combo.items = departments;
+      combo.itemValuePath = 'id';
+      combo.itemLabelPath = 'name';
+      combo.value = '1';
+    });
+  });
+
+</script>
+</body>
+</html>

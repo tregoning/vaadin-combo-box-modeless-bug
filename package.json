@@ -1,0 +1,11 @@
+{
+  "name": "vaadin-bug-report",
+  "scripts": {
+    "start": "polymer serve --port $PORT",
+    "dev": "polymer serve"
+  },
+  "dependencies": {
+    "@vaadin/vaadin-combo-box": "^5.0.9",
+    "@webcomponents/webcomponentsjs": "^2.4.0"
+  }
+}
